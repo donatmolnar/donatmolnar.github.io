@@ -13,6 +13,8 @@ html {
   padding: 30px 80px;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
+  margin: -10px 0 0 0;
 }
 
 a {
