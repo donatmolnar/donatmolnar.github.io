@@ -1,0 +1,113 @@
+html {
+  background: black;
+  color: #dddddd;
+}
+
+.navigation {
+  font-family: "Josefin Sans";
+  background: darkred;
+  font-size: 25px;
+  font-weight: bold;
+  margin:  0;
+  padding: 30px 80px;
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+  color: #dddddd;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+}
+
+.left {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+
+.head {
+  padding: 0;
+  font-family: "Abril Fatface";
+  font-size: 25px;
+  background-size: cover;
+  border-style: ridge;
+  border-width: 1px;
+  border-color: darkred;
+  background: no-repeat center/cover url("https://c4.wallpaperflare.com/wallpaper/312/646/555/badass-vader-wallpaper-preview.jpg")
+}
+
+h1 {
+  padding: 0 0 0 60px;
+  margin: -130px 0;
+  position: absolute;
+}
+
+h2 {
+  padding: 200px 0 120px 50px;
+  margin: 0;
+  font-size: 25px;
+}
+
+main {
+    margin: 0 20px;
+  font-family: "Josefin Sans";
+  font-size: 15px;
+}
+
+.intro {
+  font-size: 20px;
+  margin: 40px 0 40px 0;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-stretch: extra-expanded;
+  font-size: 20px;
+  margin: 100px 0px 20px 0px;
+}
+
+h4 {
+  font-weight: 900;
+  font-size: 20px;
+  margin: 40px 0px 10px 0px;
+
+}
+
+h5 {
+  font-family: "Merriweather";
+  font-size: 15px;
+  font-style: italic;
+  margin: 0px 0px 20px 0px;
+}
+
+blockquote {
+  font-family: "Abril Fatface";
+  margin: 20px 0px;
+  padding: 40px;
+  background: darkred;
+  font-size: 40px;
+}
+
+blockquote::before {
+  content: '”';
+  font-size: 50px;
+}
+
+li {
+  list-style-type: square;
+  margin: 0 0 10px 0;
+}
+
+hr {
+  margin: 30px 80px 30px 80px; 
+}
+
+footer {
+  margin: 0 100px;
+  font-family: "Josefin Sans";
+  font-size: 15px;
+}
