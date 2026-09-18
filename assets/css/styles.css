@@ -224,7 +224,15 @@ a { color: var(--accent); text-decoration: none; }
   color: var(--accent);
   opacity: .75;
 }
-.roles-hero { display: none; }   /* shown instead of the top bar one on narrow screens */
+.roles-hero { display: none; }   /* reduced-motion fallback for narrow screens, see below */
+
+/* Narrow screens rotate one role at a time instead of wrapping all six.
+   6 roles x 4s = a 24s loop; each is held ~2.4s between 0.7s cross-fades. */
+@keyframes role-cycle {
+  0%        { opacity: 0; translate: 0 4px; }
+  3%, 13%   { opacity: 1; translate: 0 0; }
+  16%, 100% { opacity: 0; translate: 0 -4px; }
+}
 
 .theme-toggle {
   position: relative;
@@ -835,6 +843,31 @@ a { color: var(--accent); text-decoration: none; }
 
 /* ─── 7. Responsive ─────────────────────────────────────────── */
 
+/* Below ~1160px all six roles no longer fit on one line and the bar wraps to two,
+   so from 1200px down they rotate through the same slot instead. */
+@media (max-width: 1200px) {
+  .roles-top {
+    display: block;
+    position: relative;
+    height: 1.25em;
+    text-align: center;
+  }
+  .roles-top span {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    animation: role-cycle 24s var(--ease) infinite;
+  }
+  .roles-top span + span::before { content: none; }   /* no separators when stacked */
+  .roles-top span:nth-child(2) { animation-delay:  4s; }
+  .roles-top span:nth-child(3) { animation-delay:  8s; }
+  .roles-top span:nth-child(4) { animation-delay: 12s; }
+  .roles-top span:nth-child(5) { animation-delay: 16s; }
+  .roles-top span:nth-child(6) { animation-delay: 20s; }
+}
+
 @media (max-width: 1080px) {
   .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .impact-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -843,12 +876,6 @@ a { color: var(--accent); text-decoration: none; }
 
 @media (max-width: 900px) {
   :root { --topbar-h: 58px; }
-  .roles-top { display: none; }           /* moves into the hero instead */
-  .roles-hero {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 1.5rem;
-  }
   .cert-grid { grid-template-columns: 1fr; }
 }
 
@@ -894,6 +921,18 @@ a { color: var(--accent); text-decoration: none; }
   .cert-ext { display: none; }
   .btn { width: 100%; justify-content: center; }
   .cert-more .btn { width: auto; }
+}
+
+/* No rotation for reduced-motion visitors — fall back to the static wrapped list
+   in the hero, so all six roles are still readable without any movement.
+   Must follow the 1200px block above to win the display cascade. */
+@media (max-width: 1200px) and (prefers-reduced-motion: reduce) {
+  .roles-top { display: none; }
+  .roles-hero {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+  }
 }
 
 @media print {
