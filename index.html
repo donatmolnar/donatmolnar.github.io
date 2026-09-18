@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>donatmolnar — DevOps &amp; Cloud Engineer</title>
+<meta name="description" content="donatmolnar — DevOps, Cloud and Platform Engineer. AWS, Kubernetes, Jenkins, GitOps and observability. Certified AWS Solutions Architect, CKA, HashiCorp Terraform Associate and Claude Certified Architect.">
+<link rel="canonical" href="https://donatmolnar.github.io/">
+<meta name="color-scheme" content="dark light">
+<meta name="theme-color" content="#080a12">
+
+<!-- Social preview -->
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="donatmolnar">
+<meta property="og:title" content="donatmolnar — DevOps &amp; Cloud Engineer">
+<meta property="og:description" content="DevOps · Cloud · SRE · Platform · DevSecOps. AWS, Kubernetes, Jenkins, GitOps and observability.">
+<meta property="og:url" content="https://donatmolnar.github.io/">
+<meta property="og:image" content="https://donatmolnar.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="donatmolnar — DevOps and Cloud Engineer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="donatmolnar — DevOps &amp; Cloud Engineer">
+<meta name="twitter:description" content="DevOps · Cloud · SRE · Platform · DevSecOps. AWS, Kubernetes, Jenkins, GitOps and observability.">
+<meta name="twitter:image" content="https://donatmolnar.github.io/assets/img/og.png">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/styles.css">
+
+<!-- Applies the saved theme before first paint so there is no flash -->
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('theme');
+    var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.dataset.theme = theme;
+  } catch (e) { /* private mode — keep the dark default */ }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "donatmolnar",
+  "url": "https://donatmolnar.github.io/",
+  "jobTitle": "DevOps & Cloud Engineer",
+  "sameAs": [
+    "https://www.linkedin.com/in/donatmolnar/",
+    "https://www.credly.com/users/donat-molnar/badges"
+  ],
+  "knowsAbout": [
+    "Amazon Web Services", "Kubernetes", "Terraform", "Jenkins", "ArgoCD", "Docker",
+    "Site Reliability Engineering", "Platform Engineering", "DevSecOps", "Microservices",
+    "Prometheus", "Grafana", "OpenTelemetry", "CI/CD", "Infrastructure as Code"
+  ],
+  "hasCredential": [
+    { "@type": "EducationalOccupationalCredential", "name": "AWS Certified Solutions Architect – Associate", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" } },
+    { "@type": "EducationalOccupationalCredential", "name": "CKA: Certified Kubernetes Administrator", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "The Linux Foundation" } },
+    { "@type": "EducationalOccupationalCredential", "name": "HashiCorp Certified: Terraform Associate (003)", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "HashiCorp" } },
+    { "@type": "EducationalOccupationalCredential", "name": "Claude Certified Architect – Foundations", "credentialCategory": "certification", "recognizedBy": { "@type": "Organization", "name": "Anthropic" } }
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#home">Skip to content</a>
+
+<!-- ───────────────────────── icon sprite ───────────────────────── -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7.4 18.6h9.3a4.3 4.3 0 0 0 .6-8.5 6.1 6.1 0 0 0-11.6-1.2 4.4 4.4 0 0 0 1.7 9.7Z"/></symbol>
+  <symbol id="i-cicd" viewBox="0 0 24 24"><path d="M3.6 12A8.4 8.4 0 0 1 18 6"/><path d="M18.4 2.9v3.4H15"/><path d="M20.4 12A8.4 8.4 0 0 1 6 18"/><path d="M5.6 21.1v-3.4H9"/></symbol>
+  <symbol id="i-gitops" viewBox="0 0 24 24"><circle cx="6.5" cy="5.8" r="2.3"/><circle cx="6.5" cy="18.2" r="2.3"/><circle cx="17.5" cy="9.4" r="2.3"/><path d="M6.5 8.1v7.8"/><path d="M17.5 11.7c0 3.1-2.6 4.1-5.3 4.6-1.6.3-2.6.8-2.9 1.9"/></symbol>
+  <symbol id="i-container" viewBox="0 0 24 24"><path d="m12 2.8 8.2 4.1v10.2L12 21.2 3.8 17.1V6.9Z"/><path d="m3.8 6.9 8.2 4.1 8.2-4.1"/><path d="M12 11v10.2"/></symbol>
+  <symbol id="i-k8s" viewBox="0 0 24 24"><path d="m12 2.7 8 4v10.6l-8 4-8-4V6.7Z"/><circle cx="12" cy="12" r="2.4"/><path d="M12 9.6V6.3"/><path d="m14.1 13.4 2.7 1.9"/><path d="m9.9 13.4-2.7 1.9"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2.9 5.2 5.8v6.1c0 4.3 2.9 7.8 6.8 9.2 3.9-1.4 6.8-4.9 6.8-9.2V5.8Z"/><path d="m9.2 12 2 2 3.6-3.8"/></symbol>
+  <symbol id="i-monitor" viewBox="0 0 24 24"><path d="M3.2 20.2h17.6"/><path d="M6.4 17V12.4"/><path d="M11 17V6.6"/><path d="M15.6 17v-7"/><path d="M20.2 17V9"/></symbol>
+  <symbol id="i-observe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="4.4"/><circle cx="12" cy="12" r="1"/><path d="m12 12 5.2-5.2"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><rect x="3.2" y="4.2" width="17.6" height="6.6" rx="2"/><rect x="3.2" y="13.2" width="17.6" height="6.6" rx="2"/><path d="M6.9 7.5h.01"/><path d="M6.9 16.5h.01"/></symbol>
+  <symbol id="i-iac" viewBox="0 0 24 24"><path d="m8.4 8.3-4.2 3.7 4.2 3.7"/><path d="m15.6 8.3 4.2 3.7-4.2 3.7"/><path d="m13.6 4.8-3.2 14.4"/></symbol>
+  <symbol id="i-micro" viewBox="0 0 24 24"><rect x="3.2" y="3.4" width="7" height="7" rx="2"/><rect x="13.8" y="3.4" width="7" height="7" rx="2"/><rect x="3.2" y="13.6" width="7" height="7" rx="2"/><rect x="13.8" y="13.6" width="7" height="7" rx="2"/><path d="M10.2 6.9h3.6"/><path d="M10.2 17.1h3.6"/><path d="M6.7 10.4v3.2"/><path d="M17.3 10.4v3.2"/></symbol>
+  <symbol id="i-git" viewBox="0 0 24 24"><circle cx="8" cy="5.5" r="2.2"/><circle cx="8" cy="18.5" r="2.2"/><circle cx="17" cy="12" r="2.2"/><path d="M8 7.7v8.6"/><path d="M14.8 12H8"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9.4" cy="8" r="3.4"/><path d="M3.5 20.2a6 6 0 0 1 11.8 0"/><path d="M16.1 5.2a3.4 3.4 0 0 1 0 5.6"/><path d="M17.7 14.4a6 6 0 0 1 2.8 3.2"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5"/><path d="m5.5 11.5 6.5-6.5 6.5 6.5"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M13.5 4.5H19.5V10.5"/><path d="m19.5 4.5-8 8"/><path d="M18 14.5v4a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 4 18.5v-11A1.5 1.5 0 0 1 5.5 6h4"/></symbol>
+  <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6.5 9.5 5.5 5.5 5.5-5.5"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M21.4 12h-2.2M4.8 12H2.6M18.6 5.4l-1.6 1.6M7 17l-1.6 1.6M18.6 18.6 17 17M7 7 5.4 5.4"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.2A8.6 8.6 0 0 1 9.8 3.5a8.6 8.6 0 1 0 10.7 10.7Z"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05a3.74 3.74 0 0 1 3.37-1.85c3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13Zm1.78 13.02H3.55V9h3.57v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0Z"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5.8"/><path d="m9.4 10.8-1.9 9 4.5-2.4 4.5 2.4-1.9-9"/><path d="m10.2 9 1.3 1.4 2.4-2.6"/></symbol>
+</svg>
+
+<!-- ───────────────────────── top bar ───────────────────────── -->
+<header class="topbar">
+  <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true"></span><span class="brand-text">donatmolnar</span></a>
+
+  <p class="roles roles-top" aria-label="Roles">
+    <span>DevOps Engineer</span>
+    <span>Cloud Engineer</span>
+    <span>SRE</span>
+    <span>Platform Engineer</span>
+    <span>DevSecOps</span>
+    <span>Solutions Architect</span>
+  </p>
+
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode" title="Switch theme">
+    <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"></use></svg>
+    <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"></use></svg>
+  </button>
+</header>
+
+<!-- ───────────────────────── scroll dots ───────────────────────── -->
+<nav class="dotnav" id="dotnav" aria-label="Section navigation">
+  <a href="#home"           class="dot" data-label="Home"><span class="sr-only">Home</span></a>
+  <a href="#journey"        class="dot" data-label="Journey"><span class="sr-only">Journey</span></a>
+  <a href="#impact"         class="dot" data-label="Impact"><span class="sr-only">Impact</span></a>
+  <a href="#skills"         class="dot" data-label="Skills"><span class="sr-only">Skills</span></a>
+  <a href="#certifications" class="dot" data-label="Certifications"><span class="sr-only">Certifications</span></a>
+  <a href="#contact"        class="dot" data-label="Contact"><span class="sr-only">Contact</span></a>
+</nav>
+
+<main>
+
+<!-- ═══════════════════════ 1 · HERO ═══════════════════════ -->
+<section class="section section-hero" id="home" aria-labelledby="hero-title">
+  <div class="container hero">
+    <p class="eyebrow" data-reveal>Portfolio</p>
+
+    <h1 class="hero-title" id="hero-title" data-reveal style="--d:.05s">
+      <span class="at">@</span>donatmolnar
+    </h1>
+
+    <p class="hero-lede" data-reveal style="--d:.1s">
+      Cloud &amp; DevOps engineer building reliable, secure and cost-aware platforms
+      on <strong>AWS</strong> and <strong>Kubernetes</strong>. Ten years in IT — from leading a
+      support team through automating the delivery lifecycle to designing scalable
+      microservice architectures.
+    </p>
+
+    <p class="roles roles-hero" aria-hidden="true" data-reveal style="--d:.12s">
+      <span>DevOps Engineer</span>
+      <span>Cloud Engineer</span>
+      <span>SRE</span>
+      <span>Platform Engineer</span>
+      <span>DevSecOps</span>
+      <span>Solutions Architect</span>
+    </p>
+
+    <div class="hero-actions" data-reveal style="--d:.15s">
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/donatmolnar/" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>
+        Connect on LinkedIn
+      </a>
+      <a class="btn btn-ghost" href="#certifications">
+        <svg class="icon" aria-hidden="true"><use href="#i-badge"></use></svg>
+        View credentials
+      </a>
+    </div>
+
+    <dl class="stats" data-reveal style="--d:.2s">
+      <div class="stat" data-glow>
+        <dt>Years in IT</dt>
+        <dd><span class="stat-num" data-years-since="2016">10<span class="stat-plus">+</span></span></dd>
+      </div>
+      <div class="stat" data-glow>
+        <dt>Years in cloud &amp; DevOps</dt>
+        <dd><span class="stat-num" data-years-since="2021">5<span class="stat-plus">+</span></span></dd>
+      </div>
+      <div class="stat" data-glow>
+        <dt>Saved yearly via cost optimization</dt>
+        <dd><span class="stat-num">~$80<span class="stat-unit">k</span></span></dd>
+      </div>
+    </dl>
+  </div>
+
+  <a class="scroll-cue" href="#journey" aria-label="Scroll to journey">
+    <span class="scroll-cue-track"><span class="scroll-cue-dot"></span></span>
+  </a>
+</section>
+
+<!-- ═════════════════════ 2 · JOURNEY ═════════════════════ -->
+<section class="section" id="journey" aria-labelledby="journey-title">
+  <div class="container">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow">01 / Journey</p>
+      <h2 id="journey-title">Roadmap so far</h2>
+      <p class="lede">Roles and credentials, in order.</p>
+    </header>
+
+    <ol class="timeline" id="timeline">
+      <li class="tl-item" data-reveal style="--d:.04s">
+        <span class="tl-year">2016</span>
+        <span class="tl-node" aria-hidden="true"></span>
+        <article class="card tl-card" data-glow>
+          <p class="tl-tag tl-tag-role">Role</p>
+          <h3>IT Support Team Lead</h3>
+          <p class="tl-meta">Team leadership · IT support operations</p>
+        </article>
+      </li>
+
+      <li class="tl-item" data-reveal style="--d:.08s">
+        <span class="tl-year">2021</span>
+        <span class="tl-node tl-node-live" aria-hidden="true"></span>
+        <article class="card tl-card" data-glow>
+          <p class="tl-tag tl-tag-role">Role · current</p>
+          <h3>Cloud DevOps Engineer</h3>
+          <p class="tl-meta">AWS · Kubernetes · Jenkins · Terraform · GitOps</p>
+        </article>
+      </li>
+
+      <li class="tl-item" data-reveal style="--d:.12s">
+        <span class="tl-year">2022</span>
+        <span class="tl-node" aria-hidden="true"></span>
+        <article class="card tl-card" data-glow>
+          <p class="tl-tag">Certification</p>
+          <h3>AWS Certified Solutions Architect – Associate</h3>
+          <p class="tl-meta">Amazon Web Services</p>
+        </article>
+      </li>
+
+      <li class="tl-item" data-reveal style="--d:.16s">
+        <span class="tl-year">2024</span>
+        <span class="tl-node" aria-hidden="true"></span>
+        <article class="card tl-card" data-glow>
+          <p class="tl-tag">Certification</p>
+          <h3>CKA — Certified Kubernetes Administrator</h3>
+          <p class="tl-meta">The Linux Foundation</p>
+        </article>
+      </li>
+
+      <li class="tl-item" data-reveal style="--d:.2s">
+        <span class="tl-year tl-year-repeat">2024</span>
+        <span class="tl-node" aria-hidden="true"></span>
+        <article class="card tl-card" data-glow>
+          <p class="tl-tag">Certification</p>
+          <h3>HashiCorp Certified: Terraform Associate</h3>
+          <p class="tl-meta">HashiCorp · 003</p>
+        </article>
+      </li>
+
+      <li class="tl-item" data-reveal style="--d:.24s">
+        <span class="tl-year">2026</span>
+        <span class="tl-node" aria-hidden="true"></span>
+        <article class="card tl-card" data-glow>
+          <p class="tl-tag">Certification</p>
+          <h3>Claude Certified Architect – Foundations</h3>
+          <p class="tl-meta">Anthropic</p>
+        </article>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ══════════════════════ 3 · IMPACT ══════════════════════ -->
+<section class="section" id="impact" aria-labelledby="impact-title">
+  <div class="container">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow">02 / Impact</p>
+      <h2 id="impact-title">Major achievements</h2>
+      <p class="lede">Platform work that moved reliability, security and cost in the right direction.</p>
+    </header>
+
+    <div class="impact-grid">
+      <article class="card impact-hero" data-glow data-reveal style="--d:.04s">
+        <p class="impact-figure">~$80k<span>/year</span></p>
+        <h3>Saved annually through cost optimization</h3>
+        <p>Moved off Bitnami onto official OSS solutions, and cut spend further with dynamic
+           workload handling, storage retention policies and automated cleanup processes.</p>
+      </article>
+
+      <article class="card impact-card" data-glow data-reveal style="--d:.06s">
+        <h3>On-prem → AWS migration</h3>
+        <p>Moved legacy on-premise workflows onto AWS.</p>
+      </article>
+
+      <article class="card impact-card" data-glow data-reveal style="--d:.08s">
+        <h3>Java runtimes → Kubernetes</h3>
+        <p>Containerized plain Java runtimes and moved them onto Kubernetes.</p>
+      </article>
+
+      <article class="card impact-card" data-glow data-reveal style="--d:.09s">
+        <h3>Monolith → microservices</h3>
+        <p>Broke a monolithic architecture into independently deployable microservices.</p>
+      </article>
+
+      <article class="card impact-card" data-glow data-reveal style="--d:.1s">
+        <h3>High availability &amp; stateless containers</h3>
+        <p>Redesigned workloads to be stateless and horizontally scalable.</p>
+      </article>
+
+      <article class="card impact-card" data-glow data-reveal style="--d:.12s">
+        <h3>Full SDLC automation with Jenkins</h3>
+        <p>Build, test, release, deploy and operate — end to end, hands off.</p>
+      </article>
+
+      <article class="card impact-card" data-glow data-reveal style="--d:.14s">
+        <h3>TLS &amp; encryption rollout</h3>
+        <p>Encryption in transit and at rest across services.</p>
+      </article>
+
+      <article class="card impact-card" data-glow data-reveal style="--d:.16s">
+        <h3>Automated security scanning &amp; reporting</h3>
+        <p>SAST/DAST and image scanning wired into the pipeline, with reporting.</p>
+      </article>
+
+      <article class="card impact-card" data-glow data-reveal style="--d:.18s">
+        <h3>Monitoring &amp; observability tooling</h3>
+        <p>Metrics, logs and traces in place — so failures are visible before users find them.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════ 4 · SKILLS ══════════════════════ -->
+<section class="section" id="skills" aria-labelledby="skills-title">
+  <div class="container">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow">03 / Toolbox</p>
+      <h2 id="skills-title">Skills &amp; technologies</h2>
+      <p class="lede">What I design, build and run day to day.</p>
+    </header>
+
+    <div class="skills-grid">
+      <!-- row 1 — cloud -->
+      <article class="card skill-card skill-card-x2" data-glow data-reveal style="--d:.04s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-cloud"></use></svg>
+          <h3>AWS</h3>
+        </header>
+        <ul class="chips">
+          <li>IAM</li><li>VPC</li><li>Route&nbsp;53</li><li>EKS</li><li>EBS</li><li>EFS</li><li>S3</li><li>RDS</li>
+        </ul>
+      </article>
+
+      <article class="card skill-card" data-glow data-reveal style="--d:.06s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-cloud"></use></svg>
+          <h3>Azure</h3>
+        </header>
+        <ul class="chips"><li>Service Bus</li></ul>
+      </article>
+
+      <article class="card skill-card" data-glow data-reveal style="--d:.08s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-cloud"></use></svg>
+          <h3>GCP</h3>
+        </header>
+        <ul class="chips"><li>GKE</li><li>GCR</li></ul>
+      </article>
+
+      <!-- row 2 — one primary tool each -->
+      <article class="card skill-card" data-glow data-reveal style="--d:.1s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-iac"></use></svg>
+          <h3>Infrastructure as Code</h3>
+        </header>
+        <ul class="chips"><li>Terraform</li></ul>
+      </article>
+
+      <article class="card skill-card" data-glow data-reveal style="--d:.12s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-gitops"></use></svg>
+          <h3>GitOps</h3>
+        </header>
+        <ul class="chips"><li>ArgoCD</li></ul>
+      </article>
+
+      <article class="card skill-card" data-glow data-reveal style="--d:.14s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-k8s"></use></svg>
+          <h3>Orchestration</h3>
+        </header>
+        <ul class="chips"><li>Kubernetes</li></ul>
+      </article>
+
+      <article class="card skill-card" data-glow data-reveal style="--d:.16s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-git"></use></svg>
+          <h3>Version control</h3>
+        </header>
+        <ul class="chips"><li>Git</li></ul>
+      </article>
+
+      <!-- row 3 — build & serve -->
+      <article class="card skill-card" data-glow data-reveal style="--d:.18s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-cicd"></use></svg>
+          <h3>CI/CD</h3>
+        </header>
+        <ul class="chips"><li>Jenkins</li></ul>
+        <p class="skill-note">Full SDLC automation — build · test · release · deploy · operate</p>
+      </article>
+
+      <article class="card skill-card" data-glow data-reveal style="--d:.2s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-container"></use></svg>
+          <h3>Containerization</h3>
+        </header>
+        <ul class="chips"><li>Docker</li><li>containerd</li></ul>
+      </article>
+
+      <article class="card skill-card" data-glow data-reveal style="--d:.22s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-server"></use></svg>
+          <h3>Web servers</h3>
+        </header>
+        <ul class="chips"><li>NGINX</li><li>Apache</li></ul>
+      </article>
+
+      <article class="card skill-card" data-glow data-reveal style="--d:.24s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-monitor"></use></svg>
+          <h3>Monitoring</h3>
+        </header>
+        <ul class="chips"><li>Prometheus</li><li>Grafana</li></ul>
+      </article>
+
+      <!-- row 4 — practices -->
+      <article class="card skill-card" data-glow data-reveal style="--d:.26s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-micro"></use></svg>
+          <h3>Architecture</h3>
+        </header>
+        <ul class="chips"><li>Microservices</li><li>High availability</li><li>Stateless workloads</li></ul>
+      </article>
+
+      <article class="card skill-card" data-glow data-reveal style="--d:.28s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg>
+          <h3>Security</h3>
+        </header>
+        <ul class="chips"><li>SAST / DAST</li><li>OWASP</li><li>Trivy</li></ul>
+      </article>
+
+      <article class="card skill-card" data-glow data-reveal style="--d:.3s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-observe"></use></svg>
+          <h3>Observability</h3>
+        </header>
+        <ul class="chips"><li>OpenTelemetry</li><li>FluentBit</li><li>VictoriaLogs</li><li>VictoriaMetrics</li></ul>
+      </article>
+
+      <article class="card skill-card" data-glow data-reveal style="--d:.32s">
+        <header class="skill-head">
+          <svg class="icon" aria-hidden="true"><use href="#i-people"></use></svg>
+          <h3>Leadership</h3>
+        </header>
+        <ul class="chips"><li>Mentoring</li><li>Motivating</li><li>Lecturing</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════ 5 · CERTIFICATIONS ══════════════════ -->
+<section class="section" id="certifications" aria-labelledby="certs-title">
+  <div class="container">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow">04 / Verified</p>
+      <h2 id="certs-title">Certifications</h2>
+      <p class="lede">Every badge below is independently verifiable on Credly.</p>
+    </header>
+
+    <div class="cert-grid">
+      <a class="card cert-card" data-glow data-reveal style="--d:.04s"
+         href="https://www.credly.com/badges/3cc918a1-cef3-4f3d-92a9-2badeb91c133" target="_blank" rel="noopener noreferrer">
+        <img src="assets/img/badges/aws-certified-solutions-architect-associate.png" alt="" width="120" height="120" loading="lazy" decoding="async">
+        <div class="cert-body">
+          <h3>AWS Certified Solutions Architect – Associate</h3>
+          <p class="cert-issuer">Amazon Web Services</p>
+        </div>
+        <svg class="icon cert-ext" aria-hidden="true"><use href="#i-external"></use></svg>
+      </a>
+
+      <a class="card cert-card" data-glow data-reveal style="--d:.08s"
+         href="https://www.credly.com/badges/604309da-41a5-46e2-913d-260776030ae9" target="_blank" rel="noopener noreferrer">
+        <img src="assets/img/badges/cka-certified-kubernetes-administrator.png" alt="" width="120" height="120" loading="lazy" decoding="async">
+        <div class="cert-body">
+          <h3>CKA: Certified Kubernetes Administrator</h3>
+          <p class="cert-issuer">The Linux Foundation</p>
+        </div>
+        <svg class="icon cert-ext" aria-hidden="true"><use href="#i-external"></use></svg>
+      </a>
+
+      <a class="card cert-card" data-glow data-reveal style="--d:.12s"
+         href="https://www.credly.com/badges/67fa48bf-425d-4fa4-b2a2-e18346be0f76" target="_blank" rel="noopener noreferrer">
+        <img src="assets/img/badges/hashicorp-certified-terraform-associate-003.png" alt="" width="120" height="120" loading="lazy" decoding="async">
+        <div class="cert-body">
+          <h3>HashiCorp Certified: Terraform Associate (003)</h3>
+          <p class="cert-issuer">HashiCorp</p>
+        </div>
+        <svg class="icon cert-ext" aria-hidden="true"><use href="#i-external"></use></svg>
+      </a>
+
+      <a class="card cert-card" data-glow data-reveal style="--d:.16s"
+         href="https://www.credly.com/badges/e2803752-7857-4a72-8e43-59b28c3db849" target="_blank" rel="noopener noreferrer">
+        <img src="assets/img/badges/claude-certified-architect-foundations.png" alt="" width="120" height="120" loading="lazy" decoding="async">
+        <div class="cert-body">
+          <h3>Claude Certified Architect – Foundations</h3>
+          <p class="cert-issuer">Anthropic</p>
+        </div>
+        <svg class="icon cert-ext" aria-hidden="true"><use href="#i-external"></use></svg>
+      </a>
+    </div>
+
+    <div class="cert-more" data-reveal style="--d:.2s">
+      <button class="btn btn-ghost btn-sm" id="badges-toggle" type="button" aria-expanded="false" aria-controls="badges-extra">
+        <span class="badges-toggle-label">Show 9 more badges</span>
+        <svg class="icon chev" aria-hidden="true"><use href="#i-chevron"></use></svg>
+      </button>
+
+      <div class="badges-extra" id="badges-extra" hidden>
+        <ul class="badge-grid">
+          <li><a href="https://www.credly.com/badges/ba257383-d37f-4346-905e-bd846cb6bbfc" target="_blank" rel="noopener noreferrer" data-glow class="badge-mini">
+            <img src="assets/img/badges/lfs158-introduction-to-kubernetes.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+            <span>LFS158: Introduction to Kubernetes<em>The Linux Foundation</em></span></a></li>
+
+          <li><a href="https://www.credly.com/badges/2889ffa5-6e02-4532-948b-0f9605e80c59" target="_blank" rel="noopener noreferrer" data-glow class="badge-mini">
+            <img src="assets/img/badges/reinvention-with-agentic-ai.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+            <span>Reinvention with Agentic AI<em>Accenture</em></span></a></li>
+
+          <li><a href="https://www.credly.com/badges/dd63ebf6-bda7-479a-8093-55724d5fee74" target="_blank" rel="noopener noreferrer" data-glow class="badge-mini">
+            <img src="assets/img/badges/aws-partner-sales-accredited-training-badge.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+            <span>AWS Partner: Sales Accredited<em>Amazon Web Services</em></span></a></li>
+
+          <li><a href="https://www.credly.com/badges/c1b7a658-08eb-4781-9465-afad94757939" target="_blank" rel="noopener noreferrer" data-glow class="badge-mini">
+            <img src="assets/img/badges/aws-partner-migration-acceleration-program-authoriz.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+            <span>AWS Partner: Migration Acceleration Program Authorized<em>Amazon Web Services</em></span></a></li>
+
+          <li><a href="https://www.credly.com/badges/ae61397d-1c0f-48e8-b92c-711765dc2d45" target="_blank" rel="noopener noreferrer" data-glow class="badge-mini">
+            <img src="assets/img/badges/aws-partner-migration-sales-essentials.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+            <span>AWS Partner: Migration Sales Essentials<em>Amazon Web Services</em></span></a></li>
+
+          <li><a href="https://www.credly.com/badges/56d06765-deb3-4f53-ab4a-e4e1b0b358de" target="_blank" rel="noopener noreferrer" data-glow class="badge-mini">
+            <img src="assets/img/badges/aws-partner-generative-ai-essentials-training-badge.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+            <span>AWS Partner: Generative AI Essentials<em>Amazon Web Services</em></span></a></li>
+
+          <li><a href="https://www.credly.com/badges/1d555992-2c98-474b-ac46-cebd913192a6" target="_blank" rel="noopener noreferrer" data-glow class="badge-mini">
+            <img src="assets/img/badges/people-leadership-credential-chapter-1-connect.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+            <span>People Leadership – Chapter 1: Connect<em>Accenture</em></span></a></li>
+
+          <li><a href="https://www.credly.com/badges/1f4aa68b-ed65-4a18-8287-91559ca2c7fd" target="_blank" rel="noopener noreferrer" data-glow class="badge-mini">
+            <img src="assets/img/badges/people-leadership-credential-chapter-2-develop.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+            <span>People Leadership – Chapter 2: Develop<em>Accenture</em></span></a></li>
+
+          <li><a href="https://www.credly.com/badges/4336a84b-fdab-4379-a211-5a507173d154" target="_blank" rel="noopener noreferrer" data-glow class="badge-mini">
+            <img src="assets/img/badges/people-leadership-credential-chapter-3-empower.png" alt="" width="72" height="72" loading="lazy" decoding="async">
+            <span>People Leadership – Chapter 3: Empower<em>Accenture</em></span></a></li>
+        </ul>
+      </div>
+
+      <a class="btn btn-primary btn-sm" href="https://www.credly.com/users/donat-molnar/badges" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" aria-hidden="true"><use href="#i-badge"></use></svg>
+        View all on Credly
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════ 6 · CONTACT ═════════════════════ -->
+<section class="section section-contact" id="contact" aria-labelledby="contact-title">
+  <div class="container contact">
+    <header class="section-head" data-reveal>
+      <p class="eyebrow">05 / Contact</p>
+      <h2 id="contact-title">Let's talk</h2>
+      <p class="lede">
+        Open to conversations about DevOps, cloud, SRE and platform engineering work.
+        LinkedIn is the fastest way to reach me.
+      </p>
+    </header>
+
+    <div class="hero-actions" data-reveal style="--d:.08s">
+      <a class="btn btn-primary" href="https://www.linkedin.com/in/donatmolnar/" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>
+        Message me on LinkedIn
+      </a>
+    </div>
+
+    <footer class="footer" data-reveal style="--d:.12s">
+      <p>© <span id="year">2026</span> donatmolnar</p>
+    </footer>
+  </div>
+</section>
+
+</main>
+
+<button class="to-top" id="to-top" type="button" aria-label="Back to top" title="Back to top">
+  <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+</button>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
