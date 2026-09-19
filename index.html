@@ -29,6 +29,10 @@
 <link rel="apple-touch-icon" href="assets/img/favicon.svg">
 <link rel="stylesheet" href="assets/css/styles.css">
 
+<!-- Scroll reveals start at opacity 0 and are switched on by JS. Without JS the page
+     would render blank, so neutralise them up front. -->
+<noscript><style>[data-reveal] { opacity: 1 !important; translate: none !important; }</style></noscript>
+
 <!-- Applies the saved theme before first paint so there is no flash -->
 <script>
 (function () {
@@ -135,7 +139,7 @@
 
     <p class="hero-lede" data-reveal style="--d:.1s">
       Cloud &amp; DevOps engineer building reliable, secure and cost-aware platforms
-      on <strong>AWS</strong> and <strong>Kubernetes</strong>. Ten years in IT — from leading a
+      on <strong>AWS</strong> and <strong>Kubernetes</strong>. Over a decade in IT — from leading a
       support team through automating the delivery lifecycle to designing scalable
       microservice architectures.
     </p>
@@ -163,15 +167,19 @@
     <dl class="stats" data-reveal style="--d:.2s">
       <div class="stat" data-glow>
         <dt>Years in IT</dt>
-        <dd><span class="stat-num" data-years-since="2016">10<span class="stat-plus">+</span></span></dd>
+        <dd><a class="stat-link" href="#journey" aria-label="Years in IT — go to Journey"><span class="stat-num" data-years-since="2016">10<span class="stat-plus">+</span></span></a></dd>
       </div>
       <div class="stat" data-glow>
         <dt>Years in cloud &amp; DevOps</dt>
-        <dd><span class="stat-num" data-years-since="2021">5<span class="stat-plus">+</span></span></dd>
+        <dd><a class="stat-link" href="#journey" aria-label="Years in cloud and DevOps — go to Journey"><span class="stat-num" data-years-since="2021">5<span class="stat-plus">+</span></span></a></dd>
+      </div>
+      <div class="stat" data-glow>
+        <dt>Regulated industries served</dt>
+        <dd><a class="stat-link" href="#impact" aria-label="Regulated industries served — go to Impact"><span class="stat-num">4</span></a></dd>
       </div>
       <div class="stat" data-glow>
         <dt>Saved yearly via cost optimization</dt>
-        <dd><span class="stat-num">~$80<span class="stat-unit">k</span></span></dd>
+        <dd><a class="stat-link" href="#impact" aria-label="Saved yearly via cost optimization — go to Impact"><span class="stat-num">~$80<span class="stat-unit">k</span></span></a></dd>
       </div>
     </dl>
   </div>
@@ -262,6 +270,16 @@
       <h2 id="impact-title">Major achievements</h2>
       <p class="lede">Platform work that moved reliability, security and cost in the right direction.</p>
     </header>
+
+    <div class="sectors" data-reveal style="--d:.02s">
+      <p class="sectors-label">Running in production at market leaders</p>
+      <ul class="sectors-list">
+        <li><span>Financial services</span><em>banking · insurance</em></li>
+        <li><span>Energy &amp; utilities</span><em>oil &amp; gas · electricity</em></li>
+        <li><span>Healthcare &amp; life sciences</span><em>pharma</em></li>
+        <li><span>Transport &amp; logistics</span><em>supply chain</em></li>
+      </ul>
+    </div>
 
     <div class="impact-grid">
       <article class="card impact-hero" data-glow data-reveal style="--d:.04s">
